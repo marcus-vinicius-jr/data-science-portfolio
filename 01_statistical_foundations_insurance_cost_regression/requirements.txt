@@ -1,0 +1,22 @@
+﻿# Core data stack
+numpy
+pandas
+scipy
+
+# Statistical modeling
+statsmodels
+statstests
+
+# Machine learning / validation
+scikit-learn
+
+# Visualization
+matplotlib
+seaborn
+
+# Notebook environment
+jupyter
+ipykernel
+
+# Data access
+kaggle

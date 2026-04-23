@@ -1,0 +1,12 @@
+﻿venv/
+__pycache__/
+.ipynb_checkpoints/
+*.pyc
+.DS_Store
+data/
+.vscode/
+.tmp/
+
+# Kaggle credentials (never commit)
+kaggle.json
+.kaggle/
