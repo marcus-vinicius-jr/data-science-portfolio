@@ -1,4 +1,4 @@
-#BIBLIOTECAS
+# PACKAGES
 library(shiny)
 library(shinythemes)
 library(ggplot2)
@@ -7,7 +7,7 @@ library(viridis)
 library(maps)
 library(grid)
 
-#PROCESSAMENTO DO ARQUIVO netCDF
+# netCDF file processing
 file_path <- "download.nc"
 if (!file.exists(file_path)) {
   stop("O arquivo não foi encontrado no caminho especificado.")
@@ -34,7 +34,7 @@ process_nc_data <- function(file_path) {
   return(wind_data)
 }
 
-#PLATAFORMAS
+# PLATFORMS
 platforms <- list(
   'NAMORADO 2 (PNA-2)' = c(-22.45073, -40.41175),
   'PETROBRAS 26 (P-26)' = c(-22.4684, -40.02869),
@@ -48,7 +48,7 @@ platforms <- list(
 )
 
 
-# FUNÇÃO LOCALIZAÇÃO DA BACIA DE CAMPOS
+# CAMPOS BASIN LOCATION FUNCTION
 plot_bacia_de_campos_map <- function() {
   world_map <- map_data("world")
   
@@ -80,7 +80,7 @@ plot_bacia_de_campos_map <- function() {
 }
 
 
-#FUNÇÃO VELOCIDADE MÉDIA DO VENTO POR MÊS
+# AVERAGE WIND SPEED BY MONTH FUNCTION
 plot_wind_mean_graph <- function() {
   wind_data <- process_nc_data(file_path)
   
@@ -89,7 +89,7 @@ plot_wind_mean_graph <- function() {
     geom_point(color = "blue", size = 2) +
     scale_x_datetime(date_labels = "%b %Y", date_breaks = "1 month") +
     labs(
-      #title = "Velocidade Média do Vento 2021 - 2023)",
+      #title = "Average Wind Speed 2021 - 2023)",
       x = "Tempo",
       y = "Velocidade do Vento (m/s)"
     ) +
@@ -99,7 +99,7 @@ plot_wind_mean_graph <- function() {
 
 
 
-#FUNÇÃO DE BOXPLOT POR ESTAÇÃO DO ANO
+# BOXPLOT FUNCTION BY SEASON
 plot_wind_outliers <- function() {
   wind_data <- process_nc_data(file_path)
   wind_data$season <- factor(format(wind_data$time, "%m"), levels = c("12", "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11"), 
@@ -108,7 +108,7 @@ plot_wind_outliers <- function() {
   ggplot(wind_data, aes(x = season, y = wind_speed, color = season)) +
     geom_boxplot() +
     labs(
-      #title = "Boxplot da Intensidade Média do Vento por Estação do Ano",
+      #title = "Boxplot of Average Wind Intensity by Season",
       x = "Estação do Ano",
       y = "Velocidade Média do Vento (m/s)"
     ) +
@@ -122,8 +122,8 @@ plot_wind_outliers <- function() {
     )
 }
 
-#LOCALIZAÇÃO DAS PLATAFORMAS E VELOCIDADE MÉDIA DO VENTO NA REGIÃO
-# Função para calcular a velocidade do vento em cada plataforma
+# PLATFORM LOCATION AND REGIONAL AVERAGE WIND SPEED
+# Function to calculate wind speed at each platform
 calculate_wind_speed_for_platforms <- function(file_path, platforms) {
   
   nc_data <- nc_open(file_path)
@@ -153,10 +153,10 @@ calculate_wind_speed_for_platforms <- function(file_path, platforms) {
   wind_speeds
 }
 
-# Calcula a velocidade do vento para cada plataforma (função recebe os dados)
+# Compute wind speed for each platform (function call)
 platform_wind_speeds <- calculate_wind_speed_for_platforms(file_path, platforms)
 
-# Gráfico de localização das plataformas com velocidade do vento na legenda
+# Platform location plot with wind speed in the legend
 plot_platforms_map <- function(platform_wind_speeds) {
   world_map <- map_data("world")
   
@@ -175,7 +175,7 @@ plot_platforms_map <- function(platform_wind_speeds) {
     geom_point(data = platforms_df, aes(x = lon, y = lat, color = platform), size = 3) +
     scale_color_manual(values = platforms_df$color, labels = platforms_df$label) +
     labs(
-      #title = "Localização das Plataformas de Petróleo e Gás na Bacia de Campos",
+      #title = "Location of Oil and Gas Platforms in Campos Basin",
       x = "Longitude",
       y = "Latitude",
       color = "Plataformas - Velocidade Média do Vento"
@@ -192,7 +192,7 @@ plot_platforms_map <- function(platform_wind_speeds) {
   return(p)
 }
 
-#VELOCIDADE MÉDIA VENTO NA REGIÃO COM PLATAFORMAS (ESCALA DE COR)
+# REGIONAL AVERAGE WIND SPEED WITH PLATFORMS (COLOR SCALE)
 plot_wind_mean_map <- function(file_path) {
   
   nc_data <- nc_open(file_path)
@@ -224,7 +224,7 @@ plot_wind_mean_map <- function(file_path) {
     geom_point(data = platforms_df, aes(x = lon, y = lat), color = "red", size = 3) +
     coord_quickmap(xlim = c(-42.5, -40), ylim = c(-23.5, -21.5)) +
     labs(
-      #title = "Média da Velocidade do Vento nos Anos de 2021 a 2023",
+      #title = "Average Wind Speed from 2021 to 2023",
       x = "Longitude",
       y = "Latitude",
       fill = "Velocidade Média do Vento (m/s)"
@@ -240,7 +240,7 @@ plot_wind_mean_map <- function(file_path) {
 }
 
 
-#DIREÇÃO DO VENTO COM PLATAFORMAS
+# WIND DIRECTION WITH PLATFORMS
 plot_wind_mean_map_with_arrows <- function(file_path) {
   
   nc_data <- nc_open(file_path)
@@ -277,7 +277,7 @@ plot_wind_mean_map_with_arrows <- function(file_path) {
     geom_point(data = platforms_df, aes(x = lon, y = lat), color = "blue", size = 3) +
     coord_quickmap(xlim = c(-42.5, -40), ylim = c(-23.5, -21.5)) +
     labs(
-      #title = "Média da Velocidade (m/s) e Direção da Corrente de Vento no Anos de 2021 a 2023",
+      #title = "Average Wind Speed (m/s) and Wind Flow Direction from 2021 to 2023",
       x = "Longitude",
       y = "Latitude",
       fill = "Velocidade do Vento (m/s)"
@@ -292,12 +292,12 @@ plot_wind_mean_map_with_arrows <- function(file_path) {
   return(p)
 }
 
-#POTENCIAL PLATAFORMAS
-# potência nominal de um aerogerador representa a quantidade máxima de potência que ele pode gerar em condições ideais de vento,
-# medida em watts (W). Não está diretamente relacionada ao tempo, mas sim à capacidade máxima de geração de energia
-#em determinadas condições de vento.
+# PLATFORM POWER POTENTIAL
+# The nominal power of a wind turbine represents the maximum power it can generate under ideal wind conditions,
+# measured in watts (W). It is not directly related to time, but to the maximum energy generation capacity
+# under specific wind conditions.
 
-# Função para calcular o potencial eólico
+# Function to calculate wind power potential
 densidade_ar <- 1.225  # kg/m³ Nível do Mar
 raio_rotor <- 50  # metros (para um aerogerador com diâmetro de 100 metros)
 area_pa <- 3.14159 * (raio_rotor^2)  # m²
@@ -308,7 +308,7 @@ calcula_potencial <- function(wspd_mean) {
 }
 
 
-# Função para plotar o mapa das plataformas com potencial eólico na legenda
+# Function to plot the platform map with wind potential in the legend
 plot_platforms_map_with_potential <- function() {
   world_map <- map_data("world")
   
@@ -329,8 +329,8 @@ plot_platforms_map_with_potential <- function() {
     geom_point(data = platforms_df, aes(x = lon, y = lat, color = platform), size = 3) +
     scale_color_manual(values = platforms_df$color, labels = platforms_df$label) +
     labs(
-      #title = "Localização das Plataformas de Petróleo e Gás na Bacia de Campos",
-      #title = "densidade do ar = 1.225kg/m³, raio do rotor = 50m, area da pa = pi * (raio do rotor) ^2  m² e eficiencia do aerogerador = 40%",
+      #title = "Location of Oil and Gas Platforms in Campos Basin",
+      #title = "air density = 1.225kg/m³, rotor radius = 50m, blade area = pi * (rotor radius)^2 m², and turbine efficiency = 40%",
       x = "Longitude",
       y = "Latitude",
       color = "Plataformas - Potencial Eólico"
@@ -347,7 +347,7 @@ plot_platforms_map_with_potential <- function() {
   return(p)
 }
 
-#Layout Shiny
+# Shiny layout
 ui <- navbarPage(
   theme = shinytheme("superhero"),
   title = "Estudo da Velocidade do Vento e Potencial Eólico na Bacia de Campos",
@@ -370,7 +370,7 @@ ui <- navbarPage(
            )
   )
   ,
- # ABAS SHINY 
+ # SHINY TABS 
     tabPanel("Mapa da Bacia de Campos",
              plotOutput("baciaDeCamposMap")),
     

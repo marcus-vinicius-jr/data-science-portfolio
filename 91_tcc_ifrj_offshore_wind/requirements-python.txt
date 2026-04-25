@@ -1,0 +1,10 @@
+cdsapi
+xarray
+pandas
+folium
+numpy
+seaborn
+matplotlib
+cartopy
+netCDF4
+jupyter

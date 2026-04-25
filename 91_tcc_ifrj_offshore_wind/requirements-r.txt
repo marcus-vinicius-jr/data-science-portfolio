@@ -1,0 +1,6 @@
+shiny
+shinythemes
+ggplot2
+ncdf4
+viridis
+maps
