@@ -15,6 +15,14 @@ public health contexts.
 
 ---
 
+## Portfolio Notebooks
+
+- English summary notebook: `notebooks/90_tcc_usp_malaria_summary.ipynb`
+- Portuguese summary notebook: `notebooks/90_tcc_usp_malaria_resumo_ptBR.ipynb`
+- Full original implementation: `code/TCC_MBA_DSA_USP_MALARIA.py`
+
+---
+
 ## Repository Structure
 
 ```text
