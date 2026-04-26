@@ -1,6 +1,6 @@
 # Data Science & Machine Learning Portfolio
 
-> 🇧🇷 Versão em português: [README_pt-BR.md](README_pt-BR.md)
+> 🇧🇷 Versão em português: em breve.
 
 ---
 
@@ -31,17 +31,19 @@ into a coherent journey towards a future **MSc in Data Science / AI**.
 ```text
 data-science-portfolio/
 ├── README.md
-├── README_pt-BR.md
-│
-├── 01_statistical_foundations_linear_regression/
-├── 02_eda_olist_storytelling/
-├── 03_ml_supervised_pipeline/
-├── 04_text_classification_keras/
-├── 05_llm_rag_pdf_chatbot/
-│
+├── .gitignore
+├── .gitattributes
+├── LICENSE
+├── 01_statistical_foundations_insurance_cost_regression/
 ├── 90_tcc_usp_malaria/
 └── 91_tcc_ifrj_offshore_wind/
 ```
+
+Planned next folders (roadmap):
+- `02_eda_olist_storytelling/`
+- `03_ml_supervised_pipeline/`
+- `04_text_classification_keras/`
+- `05_llm_rag_pdf_chatbot/`
 
 ---
 
@@ -49,21 +51,22 @@ data-science-portfolio/
 
 > Projects are built progressively alongside a structured reading path.  
 > Each project has its own folder with code, notebooks and a detailed README.
+> Planned/in-progress projects may be listed before their folder is created.
 
-### 01 · Statistical Foundations — Simulation & Linear Regression from Scratch  
-`📁 01_statistical_foundations_linear_regression/` · *Status: In progress*
+### 01 · Statistical Foundations — Insurance Cost Regression  
+`📁 01_statistical_foundations_insurance_cost_regression/` · *Status: Completed*
 
-From simulated, semi-realistic data (e-commerce style) to a full **OLS workflow**:
-- data simulation,
-- closed-form and gradient descent implementations,
-- basic inference and diagnostics.
+Applied a full statistical workflow on the Medical Cost Personal Dataset:
+- exploratory analysis and inferential statistics,
+- multiple linear regression with diagnostics and robust inference,
+- validation with train/test split and cross-validation.
 
 **Stack:** Python · NumPy · pandas · statsmodels · matplotlib · seaborn · scipy
 
 ---
 
 ### 02 · Business Analytics — EDA & Storytelling with Real Data  
-`📁 02_eda_olist_storytelling/` · *Status: Planned*
+`📁 02_eda_olist_storytelling/` · *Status: In progress*
 
 Exploratory data analysis and **business storytelling** on a real Brazilian dataset
 (e.g. Olist), with:
