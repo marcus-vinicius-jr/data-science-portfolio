@@ -1,6 +1,6 @@
 # Data Science & Machine Learning Portfolio
 
-> 🇧🇷 Versão em português: em breve.
+> 🇧🇷 Versão em português: [README_pt-BR.md](README_pt-BR.md)
 
 ---
 
@@ -9,11 +9,14 @@
 I am a **Data & Analytics professional** with a **B.Sc. in Production Engineering** and an **MBA in Data Science & Analytics (USP/Esalq)**. I also completed a **specialization in IT Project & Business Management (IFRJ)** and an **executive program in Project Management & Business English (Ohio University)**.
 
 Over the past years I have:
-- led **end-to-end analytics projects** (from data extraction and ETL to dashboards and automation),
-- implemented **RPA and data integrations** to reduce manual work across financial and governance areas,
+- led **end-to-end analytics projects**, including full ETL:
+  - **Extract**: ingesting data from APIs, databases and flat files using Python and SQL;
+  - **Transform**: cleaning, joining and enriching datasets with Python, SQL and Power Query;
+  - **Load & Visualize**: loading curated data into Power BI and deploying dashboards in cloud environments (AWS/Azure);
+- implemented **RPA and data integrations** to reduce manual work across financial and governance areas;
 - and developed **academic capstone projects** applying text similarity metrics and LLM evaluation
   (malaria case study, USP/Esalq), and a **web application in R** to analyze offshore wind potential
-  using ERA5 climate reanalysis data (IFRJ).
+  using ERA5 climate reanalysis data based on satellite observations (IFRJ).
 
 
 This portfolio organizes my current learning path in **Data Science, ML and AI engineering**,
@@ -159,19 +162,30 @@ consistent offshore wind generation, supporting Brazil’s energy transition str
 
 ## Study Roadmap
 
-Projects are aligned with the following reading plan:
+Projects in this portfolio are tied to a structured reading plan:
 
-- **Foundations:** *Naked Statistics* · *Essential Math for Data Science* · *Data Science for Business*  
-- **Tools & Practice:** *Python for Data Analysis*  
-- **Applied ML:** *Hands-On Machine Learning*  
-- **ML Systems & MLOps:** *Designing Machine Learning Systems* · *ML Design Patterns*  
-- **Deep Learning:** *Deep Learning with Python*  
-- **LLMs & AI Engineering:** *Hands-On Large Language Models* · *AI Engineering*
+- **Foundations** — *Naked Statistics*, *Essential Math for Data Science*, *Data Science for Business*  
+  Focus on probability, statistical thinking and how data connects to business decisions.
+
+- **Tools & Practice** — *Python for Data Analysis*  
+  Hands-on data wrangling, cleaning and EDA in Python (NumPy, pandas, visualization).
+
+- **Applied ML** — *Hands-On Machine Learning*  
+  Supervised/unsupervised learning, model evaluation and practical ML pipelines.
+
+- **ML Systems & MLOps** — *Designing Machine Learning Systems*, *ML Design Patterns*  
+  From “one-off models” to robust ML systems: design choices, patterns and trade-offs.
+
+- **Deep Learning** — *Deep Learning with Python*  
+  Neural networks for tabular, text and sequence data, connecting to portfolio DL projects.
+
+- **LLMs & AI Engineering** — *Hands-On Large Language Models*, *AI Engineering*  
+  Architectures, prompting, RAG and evaluation for large language models in production-style setups.
 
 ---
 
 ## Contact
 
 - **Email:** vinicius98freire@gmail.com  
-- **LinkedIn:** [marcus-vinicius-freire-junior  ](https://www.linkedin.com/in/marcus-vinicius-freire-junior/?locale=en-US)
+- **LinkedIn:** [marcus-vinicius-freire-junior](https://www.linkedin.com/in/marcus-vinicius-freire-junior/?locale=en-US)
 - **Location:** Rio de Janeiro, Brazil
