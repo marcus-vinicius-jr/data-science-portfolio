@@ -8,7 +8,12 @@ library(maps)
 library(grid)
 
 # netCDF file processing
-file_path <- "download.nc"
+file_candidates <- c(
+  file.path("..", "data", "download_3anos.nc"),
+  file.path("data", "download_3anos.nc"),
+  "download.nc"
+)
+file_path <- file_candidates[file.exists(file_candidates)][1]
 if (!file.exists(file_path)) {
   stop("O arquivo não foi encontrado no caminho especificado.")
 }
@@ -20,8 +25,9 @@ process_nc_data <- function(file_path) {
   v <- ncvar_get(nc_data, "v")
   time <- ncvar_get(nc_data, "time")
   
+  # NetCDF dimensions: time, latitude, longitude
   wspd <- sqrt(u^2 + v^2)
-  wspd_mean <- apply(wspd, c(3), mean)
+  wspd_mean <- apply(wspd, 1, mean, na.rm = TRUE)
   time_posix <- as.POSIXct(time * 3600, origin = "1900-01-01", tz = "UTC")
   
   wind_data <- data.frame(
@@ -139,8 +145,9 @@ calculate_wind_speed_for_platforms <- function(file_path, platforms) {
     closest_lat_idx <- which.min(abs(lat - plat_lat))
     closest_lon_idx <- which.min(abs(lon - plat_lon))
     
-    u_values <- u[closest_lon_idx, closest_lat_idx, ]
-    v_values <- v[closest_lon_idx, closest_lat_idx, ]
+    # NetCDF dimensions: time, latitude, longitude
+    u_values <- u[, closest_lat_idx, closest_lon_idx]
+    v_values <- v[, closest_lat_idx, closest_lon_idx]
     
     wspd_values <- sqrt(u_values^2 + v_values^2)
     mean_wspd <- mean(wspd_values)
@@ -201,12 +208,13 @@ plot_wind_mean_map <- function(file_path) {
   lon <- ncvar_get(nc_data, "longitude")
   lat <- ncvar_get(nc_data, "latitude")
   
+  # NetCDF dimensions: time, latitude, longitude
   wspd <- sqrt(u^2 + v^2)
-  wspd_mean <- apply(wspd, c(1, 2), mean)
+  wspd_mean <- apply(wspd, c(2, 3), mean, na.rm = TRUE)
   
   nc_close(nc_data)
   
-  wind_map_data <- expand.grid(lon = lon, lat = lat)
+  wind_map_data <- expand.grid(lat = lat, lon = lon)
   wind_map_data$wspd_mean <- as.vector(wspd_mean)
   
   platforms_df <- data.frame(
@@ -249,15 +257,16 @@ plot_wind_mean_map_with_arrows <- function(file_path) {
   lon <- ncvar_get(nc_data, "longitude")
   lat <- ncvar_get(nc_data, "latitude")
   
+  # NetCDF dimensions: time, latitude, longitude
   wspd <- sqrt(u^2 + v^2)
-  wspd_mean <- apply(wspd, c(1, 2), mean)
+  wspd_mean <- apply(wspd, c(2, 3), mean, na.rm = TRUE)
   
   nc_close(nc_data)
   
-  wind_map_data <- expand.grid(lon = lon, lat = lat)
+  wind_map_data <- expand.grid(lat = lat, lon = lon)
   wind_map_data$wspd_mean <- as.vector(wspd_mean)
-  wind_map_data$u_mean <- as.vector(apply(u, c(1, 2), mean))
-  wind_map_data$v_mean <- as.vector(apply(v, c(1, 2), mean))
+  wind_map_data$u_mean <- as.vector(apply(u, c(2, 3), mean, na.rm = TRUE))
+  wind_map_data$v_mean <- as.vector(apply(v, c(2, 3), mean, na.rm = TRUE))
   wind_map_data$potencial <- calcula_potencial(wind_map_data$wspd_mean)
   
   platforms_df <- data.frame(

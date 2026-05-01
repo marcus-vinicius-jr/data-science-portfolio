@@ -6,8 +6,8 @@
 
 This project evaluates the offshore wind potential of decommissioned oil platforms in Brazil's Campos Basin and delivers the analysis through an interactive R Shiny web application.
 
-- **Author:** Marcus Vinicius Freire Junior  
-- **Advisor:** Shirley Nunes Costa Santos  
+- **Authors:** Marcus Vinicius Freire Junior; Shirley Nunes Costa Santos  
+- **Advisor:** Ricardo Esteves Kneipp  
 - **Program:** Specialization in IT Project & Business Management - IFRJ  
 - **Year:** 2024
 
@@ -24,16 +24,18 @@ This project evaluates the offshore wind potential of decommissioned oil platfor
 ```text
 91_tcc_ifrj_offshore_wind/
 ├── code/
-│   ├── Acesso ERA5 API - Login Marcus.ipynb   # ERA5 data access and preprocessing (Python)
+│   ├── era5_data_access_offshore_wind.ipynb   # ERA5 data access, preprocessing and validation
 │   └── app.R                                  # Final R Shiny application
-├── data/                                      # Optional local data artifacts
+├── data/
+│   ├── download_3anos.nc                      # Processed ERA5 wind components, 2021-2023
+│   └── inmet_2023_sao_tome_campos.csv         # INMET Sao Tome station data, 2023
 ├── requirements-python.txt                    # Python dependencies (notebook)
 ├── requirements-r.txt                         # R dependencies (Shiny app)
 ├── README.md
 └── README_pt-BR.md
 ```
 
-> Note: Large NetCDF files are not versioned in the repository.
+> Note: the compact processed NetCDF used by the app is included for reproducibility. Large raw downloads should not be versioned.
 
 ---
 
@@ -55,7 +57,38 @@ Main objectives:
 2. **Data processing:** calculation of wind speed and direction for platform coordinates.
 3. **Spatiotemporal analysis:** maps, seasonal behavior, and platform-level comparisons.
 4. **Power potential estimate:** nominal potential based on standard assumptions (`rho`, `R`, `A`, `eta`).
-5. **Deployment:** interactive app with maps and comparative views for stakeholders.
+5. **Validation:** comparison with available monthly wind observations from the INMET Sao Tome station.
+6. **Deployment:** interactive app with maps and comparative views for stakeholders.
+
+---
+
+## Data Acquisition
+
+### ERA5 Reanalysis Data
+
+ERA5 wind data were obtained from the Copernicus Climate Data Store using the Python `cdsapi` client. The request used pressure-level monthly means, the `u` and `v` wind components, pressure level `900 hPa`, the 2021-2023 period, and a geographic bounding box covering the Campos Basin.
+
+The extraction workflow is documented in:
+
+```text
+code/era5_data_access_offshore_wind.ipynb
+```
+
+To reproduce the extraction, create a Copernicus CDS account, install `cdsapi`, and configure your credentials locally according to the official CDS API instructions. Do not commit `.cdsapirc`, API keys, tokens, or personal login data to the repository.
+
+The processed ERA5 file used by the Shiny app is:
+
+```text
+data/download_3anos.nc
+```
+
+### INMET Sao Tome Station Data
+
+Observed wind data were obtained from the official INMET station data portal for station `A620 - Campos dos Goytacazes - Sao Tome`. The file included in this project contains monthly wind observations for 2023 and is used as an external comparison source for the ERA5-based analysis.
+
+```text
+data/inmet_2023_sao_tome_campos.csv
+```
 
 ---
 
@@ -73,13 +106,23 @@ The app (`code/app.R`) includes:
 
 ---
 
+## Results Summary
+
+The analysis indicated consistent offshore wind patterns in the Campos Basin during 2021-2023, with selected decommissioning platforms showing relevant theoretical wind-power potential under the assumptions used in the study.
+
+The highest estimated platform-level potentials were observed for PETROBRAS 26 (P-26) and PETROBRAS XIX, both above 85,000 W in the simplified turbine-power calculation. PETROBRAS XXXIII and NAMORADO 2 (PNA-2) also showed relevant potential.
+
+These results should be interpreted as an exploratory technical estimate, not as a final engineering or financial feasibility study. A complete feasibility assessment would require turbine-specific power curves, bathymetry, grid connection analysis, structural evaluation, environmental licensing, and economic modeling.
+
+---
+
 ## How to Run Locally
 
 ### Python notebook (optional, ERA5 access)
 
 ```bash
 pip install -r requirements-python.txt
-jupyter notebook "code/Acesso ERA5 API - Login Marcus.ipynb"
+jupyter notebook "code/era5_data_access_offshore_wind.ipynb"
 ```
 
 ### R Shiny app
@@ -97,6 +140,7 @@ Or open `code/app.R` in RStudio and click **Run App**.
 
 - No private API keys should be committed.
 - ERA5 credentials must stay in the local machine configuration only.
+- The notebook and README use generic data-access instructions and do not include personal login data.
 - The repository is prepared for public portfolio publication.
 
 ---

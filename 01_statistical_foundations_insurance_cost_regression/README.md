@@ -2,6 +2,7 @@
 
 > 🇧🇷 Versão em português: [README_pt-BR.md](README_pt-BR.md)  
 > Part of [data-science-portfolio](../README.md)  
+> Notebook: [01_insurance_cost_analysis_regression.ipynb](notebooks/01_insurance_cost_analysis_regression.ipynb)  
 > Status: Completed
 
 This project applies statistical foundations and regression modeling to explain medical insurance charges using the Kaggle **Medical Cost Personal Dataset**.
@@ -90,7 +91,8 @@ Why this model:
 |   `-- 01_insurance_cost_analysis_regression.ipynb
 |-- requirements.txt
 |-- .gitignore
-`-- README.md
+|-- README.md
+`-- README_pt-BR.md
 ```
 
 ---

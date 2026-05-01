@@ -22,7 +22,9 @@ Este portfólio organiza minha trilha atual em **Data Science, ML e AI engineeri
 conectando:
 - fundamentos teóricos (estatística, probabilidade, álgebra linear, cálculo),
 - projetos práticos (simulação, EDA, pipelines de ML, deep learning, LLMs),
-- e trabalhos acadêmicos anteriores.
+- e trabalhos acadêmicos anteriores,
+
+em uma trilha técnica coerente, alinhada a futuros estudos de pós-graduação em **Data Science / IA**.
 
 ---
 
@@ -48,14 +50,14 @@ Próximas pastas planejadas (roadmap):
 
 ---
 
-## Projetos Atuais & Planejados
+## Projetos do Portfólio
 
-> Os projetos são desenvolvidos progressivamente junto com uma trilha estruturada de estudos.  
-> Cada projeto tem sua própria pasta com código, notebooks e README detalhado.
-> Projetos planejados/em andamento podem ser listados antes da criação da pasta.
+> Os projetos são desenvolvidos progressivamente junto com uma trilha estruturada de aprendizagem.  
+> Cada projeto tem sua própria pasta com código, notebooks e README detalhado.  
+> Projetos planejados ou em andamento podem ser listados antes da criação de suas pastas.
 
 ### 01 · Fundamentos Estatísticos — Regressão de Custos de Seguro
-`📁 01_statistical_foundations_insurance_cost_regression/` · *Status: Concluído*
+[`📁 01_statistical_foundations_insurance_cost_regression/`](01_statistical_foundations_insurance_cost_regression/) · *Status: Concluído*
 
 Aplicação de um fluxo estatístico completo no Medical Cost Personal Dataset:
 - análise exploratória e estatística inferencial,
@@ -119,7 +121,7 @@ Sistema **Retrieval-Augmented Generation (RAG)** sobre um corpus documental foca
 > Dois projetos acadêmicos concluídos, com código, dados e relatórios.
 
 ### A · Avaliação de Redes Neurais Generativas em Saúde Pública — Estudo de Caso em Malária
-`📁 90_tcc_usp_malaria/` · *TCC MBA — USP/Esalq (2025)*
+[`📁 90_tcc_usp_malaria/`](90_tcc_usp_malaria/) · *TCC MBA — USP/Esalq (2025)*
 
 Avaliou a **legibilidade, similaridade textual e consistência** de respostas de 10 sistemas baseados em LLM sobre malária, usando fichas técnicas da OMS como referência.
 
@@ -137,7 +139,7 @@ Avaliou a **legibilidade, similaridade textual e consistência** de respostas de
 ---
 
 ### B · Análise de Potencial Eólico Offshore — Aplicação Web em R Shiny (Bacia de Campos)
-`📁 91_tcc_ifrj_offshore_wind/` · *TCC Especialização — IFRJ (2024)*
+[`📁 91_tcc_ifrj_offshore_wind/`](91_tcc_ifrj_offshore_wind/) · *TCC Especialização — IFRJ (2024)*
 
 Desenvolveu uma **aplicação web interativa em R Shiny** para analisar potencial eólico offshore
 em nove plataformas de petróleo descomissionadas na Bacia de Campos, seguindo processo **CRISP-DM**.
@@ -150,31 +152,28 @@ em nove plataformas de petróleo descomissionadas na Bacia de Campos, seguindo p
 
 **Resultado:** mostrou que o reaproveitamento de plataformas descomissionadas pode oferecer geração eólica offshore competitiva e mais consistente, apoiando a estratégia de transição energética do Brasil.
 
-**Stack:** Python (`cdsapi`, `xarray`) · R (`shiny`, `ggplot2`, `ncdf4`, `viridis`, `maps`, `dplyr`, `grid`)
+**Stack:** Python (`cdsapi`, `xarray`) · R (`shiny`, `ggplot2`, `ncdf4`, `viridis`, `maps`, `grid`)
 
 ---
 
-## Roteiro de Estudos
+## Referências Técnicas
 
-Os projetos deste portfólio estão conectados a um plano de leitura estruturado:
+Este portfólio é apoiado por uma trilha estruturada de estudos que combina fundamentos
+estatísticos, analytics de negócio, machine learning aplicado, sistemas de ML,
+deep learning e engenharia de IA.
 
-- **Fundamentos** — *Naked Statistics*, *Essential Math for Data Science*, *Data Science for Business*  
-  Base em probabilidade, raciocínio estatístico e como dados se conectam a decisões de negócio.
+Referências selecionadas:
 
-- **Ferramentas & Prática** — *Python for Data Analysis*  
-  Manipulação de dados, limpeza e EDA em Python (NumPy, pandas, visualização).
-
-- **ML Aplicado** — *Hands-On Machine Learning*  
-  Modelos supervisionados/não supervisionados, avaliação e pipelines práticos de ML.
-
-- **Sistemas de ML & MLOps** — *Designing Machine Learning Systems*, *ML Design Patterns*  
-  Saindo do “modelo isolado” para sistemas de ML robustos: decisões de arquitetura e trade-offs.
-
-- **Deep Learning** — *Deep Learning with Python*  
-  Redes neurais para dados tabulares, texto e sequência, conectando com projetos de DL do portfólio.
-
-- **LLMs & AI Engineering** — *Hands-On Large Language Models*, *AI Engineering*  
-  Arquiteturas, prompting, RAG e avaliação de modelos de linguagem em cenários próximos de produção.
+- *Naked Statistics* — Charles Wheelan, 2013
+- *Data Science for Business* — Foster Provost & Tom Fawcett, 2013
+- *Essential Math for Data Science* — Thomas Nield, 2022
+- *Python for Data Analysis*, 3ª ed. — Wes McKinney, 2022
+- *Hands-On Machine Learning*, 3ª ed. — Aurélien Géron, 2022
+- *Designing Machine Learning Systems* — Chip Huyen, 2022
+- *Machine Learning Design Patterns* — Valliappa Lakshmanan, Sara Robinson & Michael Munn, 2020
+- *Deep Learning with Python*, 2ª ed. — François Chollet, 2021
+- *Hands-On Large Language Models* — Jay Alammar & Maarten Grootendorst, 2024
+- *AI Engineering* — Chip Huyen, 2024/2025
 
 ---
 

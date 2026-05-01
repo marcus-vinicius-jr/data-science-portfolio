@@ -2,6 +2,7 @@
 
 > 🇺🇸 English version: [README.md](README.md)  
 > Parte de [data-science-portfolio](../README.md)  
+> Notebook: [01_insurance_cost_analysis_regression.ipynb](notebooks/01_insurance_cost_analysis_regression.ipynb)  
 > Status: Concluído
 
 Este projeto aplica fundamentos estatísticos e modelagem de regressão para explicar custos de seguro saúde usando o dataset **Medical Cost Personal Dataset** (Kaggle).

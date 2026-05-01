@@ -1,0 +1,23 @@
+Nome: CAMPOS DOS GOYTACAZES - SAO TOME;;
+Codigo Estacao: A620;;
+Latitude: -22.04166666;;
+Longitude: -41.05166666;;
+Altitude: 7;;
+Situacao: Operante;;
+Data Inicial: 2023-01-01;;
+Data Final: 2023-12-31;;
+Periodicidade da Medicao: Mensal;;
+;;
+Data Medicao;VENTO, VELOCIDADE MAXIMA MENSAL (AUT)(m/s);VENTO, VELOCIDADE MEDIA MENSAL (AUT)(m/s)
+31/01/2023;9,2;4,5
+28/02/2023;9,5;4,8
+31/03/2023;9,2;3,7
+30/04/2023;7,3;2,8
+31/05/2023;8,6;2,5
+30/06/2023;8,2;3,1
+31/07/2023;9,4;2
+31/08/2023;8,4;1,7
+30/09/2023;9,8;3,4
+31/10/2023;10,2;3,9
+30/11/2023;9,6;4,6
+31/12/2023;9,3;3,9

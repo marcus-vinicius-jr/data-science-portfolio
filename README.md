@@ -25,7 +25,7 @@ connecting:
 - practical projects (simulation, EDA, ML pipelines, deep learning, LLMs),
 - and previous academic work (capstones),
 
-into a coherent journey towards a future **MSc in Data Science / AI**.
+into a coherent technical path aligned with future graduate studies in **Data Science / AI**.
 
 ---
 
@@ -34,6 +34,7 @@ into a coherent journey towards a future **MSc in Data Science / AI**.
 ```text
 data-science-portfolio/
 ├── README.md
+├── README_pt-BR.md
 ├── .gitignore
 ├── .gitattributes
 ├── LICENSE
@@ -50,14 +51,14 @@ Planned next folders (roadmap):
 
 ---
 
-## Current & Planned Projects
+## Portfolio Projects
 
-> Projects are built progressively alongside a structured reading path.  
-> Each project has its own folder with code, notebooks and a detailed README.
-> Planned/in-progress projects may be listed before their folder is created.
+> Projects are built progressively alongside a structured learning path.  
+> Each project has its own folder with code, notebooks, and a detailed README.  
+> Planned or in-progress projects may be listed before their folders are created.
 
 ### 01 · Statistical Foundations — Insurance Cost Regression  
-`📁 01_statistical_foundations_insurance_cost_regression/` · *Status: Completed*
+[`📁 01_statistical_foundations_insurance_cost_regression/`](01_statistical_foundations_insurance_cost_regression/) · *Status: Completed*
 
 Applied a full statistical workflow on the Medical Cost Personal Dataset:
 - exploratory analysis and inferential statistics,
@@ -121,7 +122,7 @@ A **Retrieval-Augmented Generation (RAG)** system over a focused document corpus
 > Two completed academic capstone projects, with full code, data and reports.
 
 ### A · Evaluation of Generative Neural Networks in Public Health — Malaria Case Study  
-`📁 90_tcc_usp_malaria/` · *MBA Capstone — USP/Esalq (2025)*
+[`📁 90_tcc_usp_malaria/`](90_tcc_usp_malaria/) · *MBA Capstone — USP/Esalq (2025)*
 
 Evaluated the **readability, textual similarity and consistency** of answers from 10 LLM-based
 systems about malaria, using WHO fact sheets as ground truth.
@@ -142,7 +143,7 @@ sensitive health contexts.
 ---
 
 ### B · Offshore Wind Potential Analysis — R Shiny Web Application (Campos Basin)  
-`📁 91_tcc_ifrj_offshore_wind/` · *Specialization Capstone — IFRJ (2024)*
+[`📁 91_tcc_ifrj_offshore_wind/`](91_tcc_ifrj_offshore_wind/) · *Specialization Capstone — IFRJ (2024)*
 
 Developed an interactive **R Shiny web application** to analyze offshore wind potential on
 nine decommissioned oil platforms in Brazil’s Campos Basin, following a **CRISP‑DM** process.
@@ -156,31 +157,27 @@ nine decommissioned oil platforms in Brazil’s Campos Basin, following a **CRIS
 **Outcome:** showed that reusing decommissioned platforms can provide competitive and more
 consistent offshore wind generation, supporting Brazil’s energy transition strategy.
 
-**Stack:** Python (`cdsapi`, `xarray`) · R (`shiny`, `ggplot2`, `ncdf4`, `viridis`, `maps`, `dplyr`, `grid`)
+**Stack:** Python (`cdsapi`, `xarray`) · R (`shiny`, `ggplot2`, `ncdf4`, `viridis`, `maps`, `grid`)
 
 ---
 
-## Study Roadmap
+## Technical References
 
-Projects in this portfolio are tied to a structured reading plan:
+This portfolio is supported by a structured study path combining statistical foundations,
+business analytics, applied machine learning, ML systems, deep learning and AI engineering.
 
-- **Foundations** — *Naked Statistics*, *Essential Math for Data Science*, *Data Science for Business*  
-  Focus on probability, statistical thinking and how data connects to business decisions.
+Selected references include:
 
-- **Tools & Practice** — *Python for Data Analysis*  
-  Hands-on data wrangling, cleaning and EDA in Python (NumPy, pandas, visualization).
-
-- **Applied ML** — *Hands-On Machine Learning*  
-  Supervised/unsupervised learning, model evaluation and practical ML pipelines.
-
-- **ML Systems & MLOps** — *Designing Machine Learning Systems*, *ML Design Patterns*  
-  From “one-off models” to robust ML systems: design choices, patterns and trade-offs.
-
-- **Deep Learning** — *Deep Learning with Python*  
-  Neural networks for tabular, text and sequence data, connecting to portfolio DL projects.
-
-- **LLMs & AI Engineering** — *Hands-On Large Language Models*, *AI Engineering*  
-  Architectures, prompting, RAG and evaluation for large language models in production-style setups.
+- *Naked Statistics* — Charles Wheelan, 2013
+- *Data Science for Business* — Foster Provost & Tom Fawcett, 2013
+- *Essential Math for Data Science* — Thomas Nield, 2022
+- *Python for Data Analysis*, 3rd ed. — Wes McKinney, 2022
+- *Hands-On Machine Learning*, 3rd ed. — Aurélien Géron, 2022
+- *Designing Machine Learning Systems* — Chip Huyen, 2022
+- *Machine Learning Design Patterns* — Valliappa Lakshmanan, Sara Robinson & Michael Munn, 2020
+- *Deep Learning with Python*, 2nd ed. — François Chollet, 2021
+- *Hands-On Large Language Models* — Jay Alammar & Maarten Grootendorst, 2024
+- *AI Engineering* — Chip Huyen, 2024/2025
 
 ---
 

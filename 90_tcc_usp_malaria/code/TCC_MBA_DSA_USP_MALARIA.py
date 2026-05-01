@@ -37,7 +37,6 @@ from sklearn.metrics import silhouette_score
 import pingouin as pg
 import prince
 import plotly.express as px
-import webbrowser
 
 # %% Repository path configuration
 os.makedirs(
@@ -1099,8 +1098,7 @@ fig = px.scatter_3d(
     text=chart_df_mca.categoria_id,
 )
 
-fig.write_html("results/16_mca_perceptual_map_3d.html")
-webbrowser.open("results/16_mca_perceptual_map_3d.html")
+fig.write_html("figures/16_mca_perceptual_map_3d.html")
 fig.show()
 
 # %% Exporting main files (Optional)
