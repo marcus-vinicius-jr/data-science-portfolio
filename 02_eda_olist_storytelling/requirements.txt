@@ -1,0 +1,15 @@
+# Core data stack
+numpy
+pandas
+scipy
+
+# Visualization
+matplotlib
+seaborn
+
+# Notebook environment
+jupyter
+ipykernel
+
+# Data access
+kaggle
