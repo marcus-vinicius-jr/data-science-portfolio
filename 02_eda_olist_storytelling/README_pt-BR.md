@@ -69,7 +69,9 @@ Os dados são baixados automaticamente no notebook via API do Kaggle em `data/`.
 
 ```text
 02_eda_olist_storytelling/
-|-- data/                                    # gerado pelo download via Kaggle no notebook (ignorado no git)
+|-- data/                                    # ignorado no git
+|   |-- raw/                                 # gerado pelo download via Kaggle no notebook
+|   `-- processed/                           # datasets derivados salvos pelo notebook
 |-- notebooks/
 |   `-- 02_eda_olist_storytelling.ipynb
 |-- requirements.txt
