@@ -39,12 +39,12 @@ data-science-portfolio/
 ├── .gitattributes
 ├── LICENSE
 ├── 01_statistical_foundations_insurance_cost_regression/
+├── 02_eda_olist_storytelling/
 ├── 90_tcc_usp_malaria/
 └── 91_tcc_ifrj_offshore_wind/
 ```
 
 Planned next folders (roadmap):
-- `02_eda_olist_storytelling/`
 - `03_ml_supervised_pipeline/`
 - `04_text_classification_keras/`
 - `05_llm_rag_pdf_chatbot/`
@@ -69,16 +69,17 @@ Applied a full statistical workflow on the Medical Cost Personal Dataset:
 
 ---
 
-### 02 · Business Analytics — EDA & Storytelling with Real Data  
-`📁 02_eda_olist_storytelling/` · *Status: In progress*
+### 02 · Business Analytics — EDA & Storytelling with Olist  
+[`📁 02_eda_olist_storytelling/`](02_eda_olist_storytelling/) · *Status: Completed*
 
-Exploratory data analysis and **business storytelling** on a real Brazilian dataset
-(e.g. Olist), with:
-- clearly stated hypotheses,
-- EDA and basic statistical tests,
-- narrative notebook from a business stakeholder perspective.
+Exploratory data analysis and **business storytelling** on the Brazilian E-Commerce Public
+Dataset by Olist, framed from the perspective of a Head of Operations:
+- hypotheses stated before looking at the data,
+- EDA across sales/revenue, delivery performance, reviews and geography,
+- formal hypothesis validation (t-test, Pearson, ANOVA) with robustness checks,
+- multivariate extensions: composite state ranking and MCA perceptual map.
 
-**Stack:** Python · pandas · seaborn · matplotlib · scipy
+**Stack:** Python · NumPy · pandas · scipy · scikit-learn · prince · matplotlib · seaborn
 
 ---
 

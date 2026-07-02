@@ -37,8 +37,8 @@ Os dados são baixados automaticamente no notebook via API do Kaggle em `data/`.
 
 1. Contexto de negócio, hipóteses e carregamento dos dados
 2. Entendimento e qualidade dos dados (schema, valores ausentes, feature de atraso, join principal)
-3. Análise exploratória (vendas/receita, performance de entrega, avaliações, geografia)
-4. Validação das hipóteses com testes estatísticos
+3. Análise exploratória (vendas/receita, performance de entrega, avaliações, geografia) — incluindo extensões multivariadas: ranking operacional composto por estado (score MinMax) e mapa perceptual categórico via MCA
+4. Validação das hipóteses com testes estatísticos — incluindo verificação de robustez por correlação de Spearman para H1
 5. Principais insights e storytelling de negócio
 6. Conclusões e próximos passos
 
@@ -61,6 +61,9 @@ Os dados são baixados automaticamente no notebook via API do Kaggle em `data/`.
 - **Receita e satisfação não estão alinhadas geograficamente**: o Sudeste concentra 64,6% da receita, mas o RJ - seu 2º estado em receita - fica abaixo do referencial de 4,0 na nota média de avaliação.
 - **Parcelamento se correlaciona com o valor do pedido, mas apenas moderadamente** (r = 0,374); outros fatores (categoria, frete, perfil do cliente) também importam.
 - **A categoria de produto influencia a satisfação independentemente da entrega**: telephony e watches_gifts apresentam a maior dispersão para notas baixas; auto, computers_accessories e furniture_decor se concentram mais alto e com menor dispersão.
+- **Baixo desempenho se acumula entre métricas**: um ranking operacional composto (receita + nota média + taxa de pontualidade) mostra que os estados do fundo (AL, MA, SE, CE, PA) são últimos nas três dimensões simultaneamente — a taxa de atraso de AL (21,4%) é 4x a de SP (4,5%).
+- **MCA confirma que entrega é o eixo categórico dominante**: no mapa perceptual de tipo de pagamento, região, nível de avaliação e status de entrega, `Late` é a coordenada mais extrema de todas — isolada das demais categorias, incluindo avaliação baixa, reforçando H1 como a alavanca mais acionável.
+- **Verificação de robustez Spearman (H1)**: rho = −0,176 (n = 95.824, p ≈ 0) — significativo mas fraco, indicando que a queda na avaliação é gerada por cruzar o limiar atraso/no prazo, não por um efeito dose-resposta contínuo da magnitude do atraso.
 - O valor do pedido é extremamente assimétrico à direita (assimetria = 9,37); a média (BRL 159,86) fica bem acima da mediana (BRL 105,28).
 
 ---

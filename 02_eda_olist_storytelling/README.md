@@ -37,8 +37,8 @@ Data is downloaded in the notebook via Kaggle API into `data/`.
 
 1. Business context, hypotheses and data loading
 2. Data understanding and quality (schema, missing values, delivery delay feature, master join)
-3. Exploratory data analysis (sales/revenue, delivery performance, reviews, geography)
-4. Hypothesis validation with statistical tests
+3. Exploratory data analysis (sales/revenue, delivery performance, reviews, geography) — including multivariate extensions: composite state operational ranking (MinMax scoring) and MCA categorical perceptual map
+4. Hypothesis validation with statistical tests — including Spearman robustness check for H1
 5. Key insights and business storytelling
 6. Conclusions and next steps
 
@@ -61,6 +61,9 @@ Data is downloaded in the notebook via Kaggle API into `data/`.
 - **Revenue and satisfaction are not aligned geographically**: the Southeast holds 64.6% of revenue, but RJ - its #2 state by revenue - sits below the 4.0 average-review benchmark.
 - **Installments correlate with order value, but only moderately** (r = 0.374); other factors (category, freight, customer profile) also matter.
 - **Product category drives satisfaction independently of delivery**: telephony and watches_gifts show the widest spread toward low scores; auto, computers_accessories and furniture_decor cluster higher and tighter.
+- **Underperformance compounds across metrics**: a composite operational ranking (revenue + avg review + on-time rate) shows that the bottom states (AL, MA, SE, CE, PA) rank low on all three dimensions simultaneously — AL's late-delivery rate (21.4%) is 4x SP's (4.5%).
+- **MCA confirms delivery as the dominant categorical axis**: in a perceptual map of payment type, region, review level and delivery status, `Late` is the most extreme coordinate by far — separated from all other categories including low review level, reinforcing H1 as the most actionable lever.
+- **Spearman robustness check (H1)**: rho = −0.176 (n = 95,824, p ≈ 0) — statistically significant but weak, indicating the review drop is driven by crossing the late/on-time threshold, not by a continuous dose-response effect of delay magnitude.
 - Order value is extremely right-skewed (skewness = 9.37); mean (BRL 159.86) sits well above median (BRL 105.28).
 
 ---

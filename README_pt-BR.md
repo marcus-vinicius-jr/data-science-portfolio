@@ -38,12 +38,12 @@ data-science-portfolio/
 ├── .gitattributes
 ├── LICENSE
 ├── 01_statistical_foundations_insurance_cost_regression/
+├── 02_eda_olist_storytelling/
 ├── 90_tcc_usp_malaria/
 └── 91_tcc_ifrj_offshore_wind/
 ```
 
 Próximas pastas planejadas (roadmap):
-- `02_eda_olist_storytelling/`
 - `03_ml_supervised_pipeline/`
 - `04_text_classification_keras/`
 - `05_llm_rag_pdf_chatbot/`
@@ -68,16 +68,17 @@ Aplicação de um fluxo estatístico completo no Medical Cost Personal Dataset:
 
 ---
 
-### 02 · Business Analytics — EDA & Storytelling com Dados Reais
-`📁 02_eda_olist_storytelling/` · *Status: Em andamento*
+### 02 · Business Analytics — EDA & Storytelling com a Olist
+[`📁 02_eda_olist_storytelling/`](02_eda_olist_storytelling/) · *Status: Concluído*
 
-Análise exploratória de dados e **storytelling de negócio** em um dataset real brasileiro
-(ex.: Olist), com:
-- hipóteses bem definidas,
-- EDA e testes estatísticos básicos,
-- notebook narrativo com foco em stakeholders de negócio.
+Análise exploratória de dados e **storytelling de negócio** no Brazilian E-Commerce Public
+Dataset da Olist, com perspectiva de Head de Operações:
+- hipóteses definidas antes de olhar os dados,
+- EDA em vendas/receita, entrega, avaliações e geografia,
+- validação formal das hipóteses (teste t, Pearson, ANOVA) com verificações de robustez,
+- extensões multivariadas: ranking composto por estado e mapa perceptual MCA.
 
-**Stack:** Python · pandas · seaborn · matplotlib · scipy
+**Stack:** Python · NumPy · pandas · scipy · scikit-learn · prince · matplotlib · seaborn
 
 ---
 
