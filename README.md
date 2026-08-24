@@ -40,12 +40,12 @@ data-science-portfolio/
 ├── LICENSE
 ├── 01_statistical_foundations_insurance_cost_regression/
 ├── 02_eda_olist_storytelling/
+├── 03_ml_supervised_pipeline/
 ├── 90_tcc_usp_malaria/
 └── 91_tcc_ifrj_offshore_wind/
 ```
 
 Planned next folders (roadmap):
-- `03_ml_supervised_pipeline/`
 - `04_text_classification_keras/`
 - `05_llm_rag_pdf_chatbot/`
 
@@ -84,12 +84,14 @@ Dataset by Olist, framed from the perspective of a Head of Operations:
 ---
 
 ### 03 · ML Pipeline — Supervised Learning & Evaluation  
-`📁 03_ml_supervised_pipeline/` · *Status: Planned*
+[`📁 03_ml_supervised_pipeline/`](03_ml_supervised_pipeline/) · *Status: Completed*
 
-End-to-end **supervised ML pipeline** (churn or credit/default), including:
-- feature engineering,
-- model comparison (logistic regression vs. tree-based models),
-- evaluation beyond accuracy (ROC, PR, F1, etc.).
+End-to-end **supervised ML pipeline** on the Telco Customer Churn dataset, framed
+from a Head of Customer Success / Retention perspective:
+- modeling hypotheses stated before training,
+- feature engineering and a `ColumnTransformer` + `Pipeline` preprocessing setup,
+- model comparison (logistic regression vs. Random Forest vs. Gradient Boosting) with `GridSearchCV` tuning,
+- evaluation beyond accuracy (confusion matrix, ROC-AUC, PR-AUC, F1, threshold tuning) and interpretability.
 
 **Stack:** Python · scikit-learn · pandas · matplotlib · seaborn
 

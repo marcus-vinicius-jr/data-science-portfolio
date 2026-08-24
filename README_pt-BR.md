@@ -39,12 +39,12 @@ data-science-portfolio/
 ├── LICENSE
 ├── 01_statistical_foundations_insurance_cost_regression/
 ├── 02_eda_olist_storytelling/
+├── 03_ml_supervised_pipeline/
 ├── 90_tcc_usp_malaria/
 └── 91_tcc_ifrj_offshore_wind/
 ```
 
 Próximas pastas planejadas (roadmap):
-- `03_ml_supervised_pipeline/`
 - `04_text_classification_keras/`
 - `05_llm_rag_pdf_chatbot/`
 
@@ -83,12 +83,14 @@ Dataset da Olist, com perspectiva de Head de Operações:
 ---
 
 ### 03 · Pipeline de ML — Aprendizado Supervisionado & Avaliação
-`📁 03_ml_supervised_pipeline/` · *Status: Planejado*
+[`📁 03_ml_supervised_pipeline/`](03_ml_supervised_pipeline/) · *Status: Concluído*
 
-Pipeline de **ML supervisionado** ponta a ponta (churn ou crédito/inadimplência), incluindo:
-- engenharia de atributos,
-- comparação de modelos (regressão logística vs. modelos baseados em árvore),
-- avaliação além da acurácia (ROC, PR, F1 etc.).
+Pipeline de **ML supervisionado** ponta a ponta no dataset Telco Customer Churn,
+com a perspectiva de um Head de Customer Success / Retenção:
+- hipóteses de modelagem definidas antes do treino,
+- engenharia de atributos e pré-processamento via `ColumnTransformer` + `Pipeline`,
+- comparação de modelos (regressão logística vs. Random Forest vs. Gradient Boosting) com tuning via `GridSearchCV`,
+- avaliação além da acurácia (matriz de confusão, ROC-AUC, PR-AUC, F1, ajuste de threshold) e interpretabilidade.
 
 **Stack:** Python · scikit-learn · pandas · matplotlib · seaborn
 
