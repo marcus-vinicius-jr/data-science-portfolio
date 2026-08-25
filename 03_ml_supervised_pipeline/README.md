@@ -183,6 +183,57 @@ algorithm choice, is the highest-leverage lever found in this analysis.
 
 ---
 
+## Final Model & Threshold Recommendation
+
+Recommended operating point, chosen from the cost-benefit analysis rather
+than from ROC-AUC alone:
+
+- **Model:** Gradient Boosting
+- **Decision threshold:** **0.08** (not the default 0.5, and not the
+  F1-optimal 0.324 found in section 6.3 of the notebook)
+- **Expected net value on the test set:** R$19,963.87, versus R$7,672.44 for
+  the naive "contact everyone" baseline
+
+Why this model and threshold:
+- Gradient Boosting has the best cross-validated ROC-AUC (0.8497), though
+  the margin over Random Forest (0.8481) and Logistic Regression (0.8464) is
+  small, a near three-way statistical tie.
+- Once every model is recalibrated to its own profit-optimal threshold,
+  Gradient Boosting still wins, but by only **1.42%** over Logistic
+  Regression (R$19,685.14 @ 0.12) and **4.44%** over Random Forest
+  (R$19,114.98 @ 0.24). If interpretability matters more than this thin
+  margin, Logistic Regression at threshold 0.12 is a defensible alternative.
+- This model must **not** be deployed at the default 0.5 threshold: at that
+  point it destroys R$120,113.14 in expected value relative to the naive
+  baseline (see Cost-Benefit Analysis).
+
+---
+
+## Validation Snapshot
+
+Recommended model performance at its cross-validation score and at both its
+default and recommended operating points:
+
+| Metric | CV (5-fold) | Test @ threshold 0.5 | Test @ threshold 0.08 (recommended) |
+|---|---|---|---|
+| ROC-AUC | 0.8497 | 0.8455 | threshold-independent |
+| Accuracy | n/a | 0.7984 | 0.5798 |
+| Precision (churn) | n/a | 0.6562 | 0.3843 |
+| Recall (churn) | n/a | 0.5053 | 0.9679 |
+| F1 (churn) | n/a | 0.5710 | 0.5502 |
+| Expected net value (R$) | n/a | −120,113.14 | 19,963.87 |
+
+At the recommended threshold, the model flags nearly every likely churner
+(recall 96.8%) at the cost of much lower precision (38.4%) and accuracy
+(58.0%) than the default threshold. That trade-off is intentional: given the
+cost asymmetry in the cost-benefit matrix (a missed churner costs 12x a
+wasted retention offer), the model should err heavily toward flagging.
+Classification metrics alone make this operating point look worse than the
+default threshold; only the cost-benefit view captures why it is actually
+the better choice.
+
+---
+
 ## Repository Structure
 
 ```text

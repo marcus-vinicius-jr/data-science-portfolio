@@ -190,6 +190,58 @@ encontrada nesta análise.
 
 ---
 
+## Recomendação Final de Modelo & Threshold
+
+Ponto de operação recomendado, escolhido a partir da análise de
+custo-benefício, não apenas do ROC-AUC:
+
+- **Modelo:** Gradient Boosting
+- **Threshold de decisão:** **0,08** (não o padrão 0,5, nem o ótimo por F1
+  de 0,324 encontrado na seção 6.3 do notebook)
+- **Valor líquido esperado no conjunto de teste:** R$19.963,87, contra
+  R$7.672,44 do baseline ingênuo "contatar todos"
+
+Por que esse modelo e threshold:
+- O Gradient Boosting tem o melhor ROC-AUC em validação cruzada (0,8497),
+  mas a margem sobre o Random Forest (0,8481) e a Regressão Logística
+  (0,8464) é pequena, quase um empate triplo estatístico.
+- Depois de recalibrar cada modelo para seu próprio threshold ótimo por
+  lucro, o Gradient Boosting ainda vence, mas por apenas **1,42%** sobre a
+  Regressão Logística (R$19.685,14 @ 0,12) e **4,44%** sobre o Random Forest
+  (R$19.114,98 @ 0,24). Se interpretabilidade pesar mais que essa margem
+  pequena, a Regressão Logística no threshold 0,12 é uma alternativa
+  defensável.
+- Esse modelo **não pode** ser implantado no threshold padrão de 0,5: nesse
+  ponto ele destrói R$120.113,14 de valor esperado em relação ao baseline
+  ingênuo (ver Análise de Custo-Benefício).
+
+---
+
+## Retrato de Validação
+
+Desempenho do modelo recomendado no score de validação cruzada e nos
+thresholds padrão e recomendado:
+
+| Métrica | CV (5-fold) | Teste @ threshold 0,5 | Teste @ threshold 0,08 (recomendado) |
+|---|---|---|---|
+| ROC-AUC | 0,8497 | 0,8455 | independente de threshold |
+| Accuracy | n/a | 0,7984 | 0,5798 |
+| Precision (churn) | n/a | 0,6562 | 0,3843 |
+| Recall (churn) | n/a | 0,5053 | 0,9679 |
+| F1 (churn) | n/a | 0,5710 | 0,5502 |
+| Valor líquido esperado (R$) | n/a | −120.113,14 | 19.963,87 |
+
+No threshold recomendado, o modelo sinaliza quase todo churner provável
+(recall de 96,8%) ao custo de precisão (38,4%) e acurácia (58,0%) bem
+menores que no threshold padrão. Essa troca é intencional: dada a assimetria
+de custo na matriz de custo-benefício (um churner não detectado custa 12x
+uma oferta de retenção desperdiçada), o modelo deve errar fortemente para o
+lado de sinalizar demais. As métricas de classificação isoladas fazem esse
+ponto de operação parecer pior que o threshold padrão; só a visão de
+custo-benefício captura por que ele é, de fato, a escolha melhor.
+
+---
+
 ## Estrutura do Repositório
 
 ```text
