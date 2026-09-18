@@ -141,6 +141,9 @@ ENV/
 env.bak/
 venv.bak/
 
+# Local project environment notes (ignored by Git)
+.local-env-docs/
+
 # Spyder project settings
 .spyderproject
 .spyproject

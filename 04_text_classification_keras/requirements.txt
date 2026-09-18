@@ -1,0 +1,25 @@
+# Core data stack
+numpy
+pandas
+scipy
+
+# Machine learning
+scikit-learn
+
+# Deep learning
+tensorflow
+
+# NLP preprocessing
+nltk
+wordcloud
+
+# Visualization
+matplotlib
+seaborn
+
+# Notebook environment
+jupyter
+ipykernel
+
+# Data access
+kaggle

@@ -40,12 +40,12 @@ data-science-portfolio/
 ├── 01_statistical_foundations_insurance_cost_regression/
 ├── 02_eda_olist_storytelling/
 ├── 03_ml_supervised_pipeline/
+├── 04_text_classification_keras/
 ├── 90_tcc_usp_malaria/
 └── 91_tcc_ifrj_offshore_wind/
 ```
 
 Próximas pastas planejadas (roadmap):
-- `04_text_classification_keras/`
 - `05_llm_rag_pdf_chatbot/`
 
 ---
@@ -97,13 +97,14 @@ com a perspectiva de um Head de Customer Success / Retenção:
 ---
 
 ### 04 · Deep Learning — Classificação de Texto com Keras
-`📁 04_text_classification_keras/` · *Status: Planejado*
+[`📁 04_text_classification_keras/`](04_text_classification_keras/) · *Status: Concluído*
 
-**Classificação de texto** (sentimento/spam) com Keras, conectando ML clássico e deep learning:
-- modelo de sequência simples (Embedding + LSTM/GRU ou 1D CNN),
-- comparação com baseline TF-IDF + regressão logística.
+**Classificação de texto** com Keras no dataset Twitter US Airline Sentiment, conectando ML clássico e deep learning, com a perspectiva de um Head de Customer Experience Digital triando tweets quase em tempo real:
+- um framework explícito de rede neural de seis passos, aplicado uma vez e reaproveitado em duas arquiteturas,
+- baseline TF-IDF + regressão logística comparado a Embedding + LSTM e Embedding + 1D CNN,
+- avaliação além da acurácia (macro-F1, matrizes de confusão, ROC-AUC multiclasse) e um threshold de decisão de negócio ajustado para uma fila de triagem ao vivo.
 
-**Stack:** Python · TensorFlow/Keras · scikit-learn · pandas · matplotlib
+**Stack:** Python · TensorFlow/Keras · scikit-learn · pandas · NLTK · matplotlib
 
 ---
 
