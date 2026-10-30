@@ -11,6 +11,10 @@ This project builds and evaluates a **Retrieval-Augmented Generation (RAG) assis
 from the perspective of the Head of a National Malaria Control Programme, who needs fast answers **with the document and page
 cited**, and for whom a confident but wrong answer is worse than "I could not find it".
 
+![Chat demo: a typed question answered with citations, the retrieved sources, example questions and an abstention](docs/chat_demo.gif)
+
+*The [local chat app](#local-chat-app): answers with cited sources, and declines questions the documents do not cover.*
+
 The notebook combines:
 - modelling hypotheses stated before building anything,
 - PDF ingestion with an extraction-quality audit (chart glyph names, repeated footers) and recursive chunking,
@@ -223,8 +227,6 @@ so later runs take a few minutes and cost nothing.
 ---
 
 ## Local Chat App
-
-![Chat demo: a typed question answered with citations, the retrieved sources, example questions and an abstention](docs/chat_demo.gif)
 
 [`app.py`](app.py) is a small **Streamlit** chat built on the configuration recommended by the evaluation (OpenAI
 `text-embedding-3-small` retrieval, top 5 chunks, `gpt-4.1-mini` with the grounding prompt). It shows the assistant in use:

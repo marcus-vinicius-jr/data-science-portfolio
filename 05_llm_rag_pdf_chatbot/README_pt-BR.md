@@ -11,6 +11,10 @@ Este projeto constrói e avalia um **assistente de Retrieval-Augmented Generatio
 perspectiva de um(a) gestor(a) de Programa Nacional de Controle da Malária, que precisa de respostas rápidas **com documento e
 página citados**, e para quem uma resposta confiante porém errada é pior do que "não encontrei".
 
+![Demo do chat: pergunta digitada respondida com citações, as fontes recuperadas, perguntas de exemplo e uma abstenção](docs/chat_demo.gif)
+
+*O [chat local](#chat-local): responde com as fontes citadas e recusa perguntas que os documentos não cobrem.*
+
 O notebook combina:
 - hipóteses de modelagem definidas antes de construir qualquer coisa,
 - ingestão de PDFs com auditoria da qualidade da extração (nomes de glifos de gráficos, rodapés repetidos) e chunking recursivo,
@@ -229,8 +233,6 @@ LLM ficam em cache em `data/processed/`, então as execuções seguintes levam p
 ---
 
 ## Chat Local
-
-![Demo do chat: pergunta digitada respondida com citações, as fontes recuperadas, perguntas de exemplo e uma abstenção](docs/chat_demo.gif)
 
 O [`app.py`](app.py) é um pequeno chat em **Streamlit** construído sobre a configuração recomendada pela avaliação (busca com
 `text-embedding-3-small` da OpenAI, top 5 chunks, `gpt-4.1-mini` com o prompt de grounding). Ele mostra o assistente em uso:
