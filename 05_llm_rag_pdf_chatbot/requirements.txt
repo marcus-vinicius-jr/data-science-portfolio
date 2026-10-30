@@ -1,0 +1,36 @@
+# Core data stack
+numpy
+pandas
+
+# PDF ingestion
+pypdf
+
+# RAG framework (LangChain + Chroma vector store)
+langchain-core
+langchain-text-splitters
+langchain-openai
+langchain-chroma
+langchain-huggingface
+chromadb
+
+# Embeddings (local model; install CPU-only torch first, see README)
+sentence-transformers
+
+# Term-based retrieval (BM25)
+rank_bm25
+
+# LLM API, token counting & secrets
+openai
+tiktoken
+python-dotenv
+
+# Visualization
+matplotlib
+seaborn
+
+# Local chat app (app.py)
+streamlit
+
+# Notebook environment
+jupyter
+ipykernel

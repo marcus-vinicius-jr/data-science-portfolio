@@ -42,12 +42,10 @@ data-science-portfolio/
 ├── 02_eda_olist_storytelling/
 ├── 03_ml_supervised_pipeline/
 ├── 04_text_classification_keras/
+├── 05_llm_rag_pdf_chatbot/
 ├── 90_tcc_usp_malaria/
 └── 91_tcc_ifrj_offshore_wind/
 ```
-
-Planned next folders (roadmap):
-- `05_llm_rag_pdf_chatbot/`
 
 ---
 
@@ -110,14 +108,18 @@ from a Head of Customer Success / Retention perspective:
 ---
 
 ### 05 · LLM & RAG — Domain-Specific PDF Chatbot  
-`📁 05_llm_rag_pdf_chatbot/` · *Status: Planned*
+[`📁 05_llm_rag_pdf_chatbot/`](05_llm_rag_pdf_chatbot/) · *Status: Completed*
 
-A **Retrieval-Augmented Generation (RAG)** system over a focused document corpus
-(e.g. health, legislation or technical reports), with:
-- ingestion, chunking, embeddings and vector search,
-- documented architectural choices and basic evaluation of answer quality.
+A **Retrieval-Augmented Generation (RAG)** assistant over 727 pages of WHO malaria documents (*WHO guidelines for malaria*,
+*World malaria report 2025*), framed from the perspective of the Head of a National Malaria Control Programme who needs
+cited, verifiable answers:
+- PDF ingestion with an extraction-quality audit, recursive chunking and a Chroma vector store,
+- OpenAI vs. local (`bge-small`) embeddings, a BM25 baseline and hybrid search with Reciprocal Rank Fusion, evaluated on a
+  hand-labelled question set (hit rate@k, MRR),
+- grounded generation with citations vs. a closed-book baseline, scored by an AI judge (correctness, faithfulness, abstention on
+  unanswerable questions), plus citation validity, latency and cost.
 
-**Stack:** Python · LangChain / LlamaIndex · vector store · LLM API / open-source LLM
+**Stack:** Python · LangChain · Chroma · OpenAI API (`gpt-4.1-mini`, `text-embedding-3-small`) · sentence-transformers · rank-bm25 · pandas
 
 ---
 

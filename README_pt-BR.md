@@ -41,12 +41,10 @@ data-science-portfolio/
 ├── 02_eda_olist_storytelling/
 ├── 03_ml_supervised_pipeline/
 ├── 04_text_classification_keras/
+├── 05_llm_rag_pdf_chatbot/
 ├── 90_tcc_usp_malaria/
 └── 91_tcc_ifrj_offshore_wind/
 ```
-
-Próximas pastas planejadas (roadmap):
-- `05_llm_rag_pdf_chatbot/`
 
 ---
 
@@ -109,14 +107,18 @@ com a perspectiva de um Head de Customer Success / Retenção:
 ---
 
 ### 05 · LLM & RAG — Chatbot com PDFs de Domínio Específico
-`📁 05_llm_rag_pdf_chatbot/` · *Status: Planejado*
+[`📁 05_llm_rag_pdf_chatbot/`](05_llm_rag_pdf_chatbot/) · *Status: Concluído*
 
-Sistema **Retrieval-Augmented Generation (RAG)** sobre um corpus documental focado
-(ex.: saúde, legislação ou relatórios técnicos), com:
-- ingestão, chunking, embeddings e busca vetorial,
-- decisões arquiteturais documentadas e avaliação básica da qualidade das respostas.
+Assistente de **Retrieval-Augmented Generation (RAG)** sobre 727 páginas de documentos da OMS sobre malária (*WHO guidelines
+for malaria*, *World malaria report 2025*), com a perspectiva de um(a) gestor(a) de Programa Nacional de Controle da Malária
+que precisa de respostas citadas e verificáveis:
+- ingestão de PDFs com auditoria da qualidade da extração, chunking recursivo e vector store Chroma,
+- embeddings da OpenAI vs. locais (`bge-small`), baseline BM25 e busca híbrida com Reciprocal Rank Fusion, avaliados em um
+  conjunto de perguntas rotulado à mão (hit rate@k, MRR),
+- geração fundamentada com citações vs. baseline closed-book, avaliada por um AI judge (correção, fidelidade, abstenção em
+  perguntas sem resposta), além de validade das citações, latência e custo.
 
-**Stack:** Python · LangChain / LlamaIndex · vector store · LLM API / LLM open-source
+**Stack:** Python · LangChain · Chroma · OpenAI API (`gpt-4.1-mini`, `text-embedding-3-small`) · sentence-transformers · rank-bm25 · pandas
 
 ---
 
